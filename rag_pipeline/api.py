@@ -13,7 +13,9 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import Optional
+from pathlib import Path
 import time
+import json
 
 from rag_pipeline.pipeline import RAGPipeline
 from rag_pipeline.data_loader import load_sample_data
@@ -140,3 +142,18 @@ def reset_collection():
     pipeline = get_pipeline()
     pipeline.reset_collection()
     return {"message": "Collection deleted. Ready to re-ingest."}
+
+
+# ── Eval results endpoint ──────────────────────────────────────────────────────
+
+@app.get("/eval/runs")
+def get_eval_runs():
+    """Return all eval run results for the dashboard."""
+    results_dir = Path("./evaluation/results")
+    if not results_dir.exists():
+        return []
+    runs = []
+    for f in sorted(results_dir.glob("eval_run_*.json")):
+        with open(f) as fp:
+            runs.append(json.load(fp))
+    return runs
