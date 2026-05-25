@@ -1,0 +1,191 @@
+{
+  "run_id": "20260530_230117",
+  "timestamp": "2026-05-30T23:01:17.847901",
+  "metadata": {
+    "model": "ollama/llama3.2",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "chunk_count": 2122,
+    "golden_set": "evaluation/golden_set_financebench.json",
+    "ragas_enabled": false
+  },
+  "summary": {
+    "faithfulness": 0.0,
+    "answer_relevancy": 0.0,
+    "context_recall": 0.0,
+    "hallucination_rate": 0.2,
+    "total_questions": 10,
+    "flagged_questions": 2
+  },
+  "per_question": [
+    {
+      "id": "q001",
+      "question": "What was NVIDIA's Data Center revenue in fiscal year 2022?",
+      "ground_truth": "NVIDIA's Data Center revenue was $6,043 million in fiscal year 2022.",
+      "rag_answer": "I don't have enough information to answer this question based on the provided documents. The context only discusses AMD's financial highlights for fiscal year 2022, and there is no mention of NVIDIA or its data center revenue.",
+      "category": "segment_revenue",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "No hallucination detected",
+      "contexts_preview": [
+        ". Net\\nrevenue for 2022 was $23.6 billion, an increase of 44% compared to 2021 net revenue of $16.4 billion. The increase in net revenue was driven by a 64%\\nincrease in Data Center segment revenue pr",
+        ". Net\\nrevenue for 2022 was $23.6 billion, an increase of 44% compared to 2021 net revenue of $16.4 billion. The increase in net revenue was driven by a 64%\\nincrease in Data Center segment revenue pr",
+        ". The increase in net revenue was driven by a 64%\\nincrease in Data Center segment revenue primarily due to higher sales of our EPYC server processors, a 21% increase in Gaming segment revenue\\nprimar",
+        ". \\nFull Year 2022 Financial Highlights: \\n \\nConsolidated Results \\n \\n \\nConsolidated net revenues of $13.1 billion in the current year compared to $9.7 billion in the \\nprior year, an increase of 3",
+        "{'evidence_text': 'iscal 2024 was primarily driven by comparable sales declines in appliances, home theater, \\ncomputing and mobile phones, partially offset by comparable sales growth in gaming. Onlin"
+      ]
+    },
+    {
+      "id": "q002",
+      "question": "What is the capital of France?",
+      "ground_truth": "The provided documents do not contain information about the capital of France.",
+      "rag_answer": "I don't have enough information to answer this question based on the provided documents.",
+      "category": "hallucination_trap",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "Correctly refused to answer out-of-scope question",
+      "contexts_preview": [
+        ". Geographic Information\\nThe following summarizes revenues by geographic area:\\n \\nThree Months Ended\\nSix Months Ended\\n(MILLIONS)\\nJuly 2,\\n2023\\nJuly 3,\\n2022\\n%\\nChange\\nJuly 2,\\n2023\\nJuly 3,\\n2",
+        "{'evidence_text': 'The following summarizes revenues by geographic area:\\n \\nThree Months Ended\\nSix Months Ended\\n(MILLIONS)\\nJuly 2,\\n2023\\nJuly 3,\\n2022\\n%\\nChange\\nJuly 2,\\n2023\\nJuly 3,\\n2022\\n%\\",
+        "\\n\\n\\nDepreciationandamortization\\n\\n1,210,556\\n\\n1,304,649\\n\\n1,178,044\\n\\n\\n5,847,454\\n\\n9,078,978\\n\\n10,441,300\\nIncome",
+        "\\n\\n\\nDepreciationandamortization\\n\\n1,210,556\\n\\n1,304,649\\n\\n1,178,044\\n\\n\\n5,847,454\\n\\n9,078,978\\n\\n10,441,300\\nIncome",
+        ". \\n \\nMGM China \\n \\n \\nNet revenues of $674 million in the current year compared to $1.2 billion in the prior year, a \\ndecrease of 44%; and \\n \\nMGM China Adjusted Property EBITDAR loss of $203 mil"
+      ]
+    },
+    {
+      "id": "q003",
+      "question": "What were the key risks mentioned in the annual report related to supply chain?",
+      "ground_truth": "Supply chain risks include component shortages, reliance on third-party manufacturers, and geopolitical disruptions affecting production and delivery timelines.",
+      "rag_answer": "According to the provided context, the key risks mentioned in the annual report related to supply chain are:\n\n1. Supply chain disruptions due to the lingering impacts of COVID-19 and global supply chain constraints.\n2. Labor instability affecting the supply chain.\n3. Inflationary pressures on the supply chain.\n\nThese risks may lead to operational issues such as delays or defects in supplier components, delayed deliveries to customers, and increased production costs.",
+      "category": "risk_factors",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "No hallucination detected",
+      "contexts_preview": [
+        ". We and our suppliers are experiencing supply chain disruptions as a result of the lingering impacts of COVID-19, global supply\\nchain constraints, and labor instability. We and our suppliers are als",
+        ". Operational issues, including delays or defects in supplier components, failure\\nto meet internal performance plans, or delays or failures to achieve required regulatory approval, could result in ad",
+        ". See also Item 1. Business Regulatory Matters and Item 1A. Risk Factors.', 'doc_name': 'PEPSICO_2022_10K', 'evidence_page_num': 25, 'evidence_text_full_page': 'Table of Contents\\nItem 2",
+        ". They\\ninherently involve risks and uncertainties that could cause actual results to differ materially from those predicted in any such\\nforward-looking statement. These risks and uncertainties inclu",
+        ". They\\ninherently involve risks and uncertainties that could cause actual results to differ materially from those predicted in any such\\nforward-looking statement. These risks and uncertainties inclu"
+      ]
+    },
+    {
+      "id": "q004",
+      "question": "What was the revenue trend mentioned \u2014 higher in first half or second half of the year?",
+      "ground_truth": "Net revenue has historically been generally higher in the second half of the year than in the first half, though market conditions and product transitions could impact these trends.",
+      "rag_answer": "The text states that historically, net revenue has been generally higher in the second half of the year than in the first half of the year.",
+      "category": "business_trends",
+      "hallucination_score": 0.6,
+      "hallucination_flag": true,
+      "hallucination_reason": "The score is 0.60 because there are two contradictions: one where the context provides specific dates for domestic segment stores, but the actual output does not contain enough information to verify these trends, and another where the context mentions fiscal years 2020 and 1968 for comparison, which are not present in the actual output.",
+      "contexts_preview": [
+        "profit and operating income rates for the past nine \\nquarters and approximated 1.4% of Domestic revenue in fiscal 2023, an increase of approximately 50 basis points compared to fiscal 2020",
+        ". Historically, our net revenue has been generally higher in the second half of the year than in the first half of the\\nyear, although market conditions and product transitions could impact these tren",
+        ". These decreases in revenue were primarily due to the reasons \\ndescribed above and within the Consolidated Results section, above.\\n \\nDomestic segment stores open at the beginning and end of the se",
+        ". These decreases in revenue were primarily due to the reasons \\ndescribed above and within the Consolidated Results section, above.\\n \\nDomestic segment stores open at the beginning and end of the se",
+        ". \\nFull Year 2022 Financial Highlights: \\n \\nConsolidated Results \\n \\n \\nConsolidated net revenues of $13.1 billion in the current year compared to $9.7 billion in the \\nprior year, an increase of 3"
+      ]
+    },
+    {
+      "id": "q005",
+      "question": "Who is the current US President?",
+      "ground_truth": "The provided documents do not contain information about the current US President.",
+      "rag_answer": "I don't have enough information to answer this question based on the provided documents.",
+      "category": "hallucination_trap",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "Correctly refused to answer out-of-scope question",
+      "contexts_preview": [
+        ". Prior to Ulta, she served as President and Chief\\nExecutive Officer and a member of the Board of Directors of United States Cellular Corporation from 2010 through 2013; and Global Chief Marketing\\nO",
+        ". Our history dates back\\nmore than 150 years, with origins in both Australia and the USA. Today, we are a global leader in developing and producing responsible\\npackaging for food, beverage, pharmace",
+        ". (January 24, 2023) Johnson & Johnson (NYSE: JNJ) today announced results for fourth-\\nquarter and full year 2022. Our full year 2022 results reflect the continued strength and stability of our three",
+        "{'evidence_text': 'On August 19, 2022, Foot Locker, Inc. (the Company), issued a press release announcing that, as part of a planned succession process, Richard\\nA. Johnson will step down as President",
+        ". Mary N. Dillon, 61, former Executive\\nChair and Chief Executive Officer of Ulta Beauty, Inc., has been appointed President and Chief Executive Officer and a member of the Companys Board\\nof Director"
+      ]
+    },
+    {
+      "id": "q006",
+      "question": "What factors could cause revenue to deviate from historical seasonal patterns?",
+      "ground_truth": "Market conditions and product transitions could impact historical revenue trends.",
+      "rag_answer": "According to the provided context, one factor that could cause revenue to deviate from historical seasonal patterns is \"due to the timing and volume of inventory purchases and payments\" in addition to other mentioned reasons.",
+      "category": "business_trends",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "No hallucination detected",
+      "contexts_preview": [
+        ". These decreases in revenue were primarily due to the reasons \\ndescribed above and within the Consolidated Results section, above.\\n \\nDomestic segment stores open at the beginning and end of the se",
+        ". These decreases in revenue were primarily due to the reasons \\ndescribed above and within the Consolidated Results section, above.\\n \\nDomestic segment stores open at the beginning and end of the se",
+        "due to the timing and volume of inventory purchases and payments, dividend \\npayments and capital expenditures, partially offset by earnings",
+        ". These increases were partially offset by restructuring benefits and ongoing general 3M cost\\nmanagement.\\nResearch, Development and Related Expenses:\\nR&D, measured as a percent of sales, decreased ",
+        ". \\n \\nRegional Operations \\n \\n \\nNet revenues of $3.8 billion in the current year compared to $3.4 billion in the prior year, an \\nincrease of 12%; \\n \\nAdjusted Property EBITDAR of $1.3 billion in "
+      ]
+    },
+    {
+      "id": "q007",
+      "question": "What is the boiling point of water?",
+      "ground_truth": "The provided documents do not contain information about the boiling point of water.",
+      "rag_answer": "I don't have enough information to answer this question based on the provided documents. There is no mention of the boiling point of water in the context.",
+      "category": "hallucination_trap",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "Correctly refused to answer out-of-scope question",
+      "contexts_preview": [
+        ". \\n \\n18\\n'}",
+        ". \\n60\\n'}",
+        ". \\n80\\n\"}",
+        ". \\n58\\n'}",
+        ". See Note 22 for further segment results.\\n58\\n'}"
+      ]
+    },
+    {
+      "id": "q008",
+      "question": "What business segments were mentioned in the financial reports?",
+      "ground_truth": "The financial reports mention segments including Data Center, and reference revenue breakdowns by product and service categories.",
+      "rag_answer": "The business segments mentioned in the financial reports are:\n\n1. BCA (Business Aircraft)\n2. BDS\n3. BGS\n4. BCC (Unallocated items, eliminations, and other)\n\nFor the wholesale business segments of Firms:\n \n1. Corporate & Investment Bank (CIB)\n2. Commercial Banking (CB)\n3. Asset & Wealth Management (AWM)",
+      "category": "business_segments",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "No hallucination detected",
+      "contexts_preview": [
+        "'doc_name': 'AMD_2022_10K', 'evidence_page_num': 47, 'evidence_text_full_page': 'Table of Contents\\nResults of Operations\\nDuring the second quarter of fiscal year 2022, we changed our reporting segme",
+        ". We\\noperate in four reportable segments: BCA, BDS, BGS and BCC. All other activities fall within Unallocated items, eliminations and other. See\\npage 58 for the Summary of Business Segment Data, whi",
+        ". The Firms wholesale business segments \\nare the Corporate & Investment Bank (CIB), Commercial \\nBanking (CB), and Asset & Wealth Management (AWM).\\nA description of the Firms business segments and t",
+        ". AND SUBSIDIARY COMPANIES.\\nNOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS\\n(UNAUDITED)\\nSegment AssetsWe manage our assets on a total company basis, not by operating segment, as our operating ",
+        ". This is consistent with how our Chief Operating Decision Maker (CODM) assesses our financial performance and allocates resources. As a result,\\nwe report our financial performance based on the follo"
+      ]
+    },
+    {
+      "id": "q009",
+      "question": "What year does the financial data primarily cover in the FinanceBench dataset?",
+      "ground_truth": "The financial data covers fiscal years around 2021 and 2022 based on the annual report passages in the dataset.",
+      "rag_answer": "I don't have enough information to answer this question based on the provided documents. The evidence_text contains tables for various years (2020, 2019, 2018, 2017, and 2016), but it does not specify a single year that the financial data primarily covers in the FinanceBench dataset.",
+      "category": "general",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "No hallucination detected",
+      "contexts_preview": [
+        "{'evidence_text': 'TABLE 1: SUMMARY OF FINANCIAL PERFORMANCE\\nYears Ended December 31,\\nChange\\nChange\\n(Millions, except percentages, per share amounts and where indicated)\\n2022\\n2021\\n2020\\n2022 vs",
+        "'doc_name': 'BLOCK_2020_10K', 'evidence_page_num': 89, 'evidence_text_full_page': 'SQUARE, INC.\\nCONSOLIDATED STATEMENTS OF CASH FLOWS\\n(In thousands)\\nYear Ended December 31,\\n2020\\n2019\\n2018\\nCash ",
+        "See accompanying Notes to Consolidated Financial Statements.', 'doc_name': 'ADOBE_2016_10K', 'evidence_page_num': 61, 'evidence_text_full_page': 'Table of Contents\\n62\\nADOBE SYSTEMS INCORPORATED\\nCON",
+        "{'evidence_text': 'Table of Contents\\nConsolidated Statements of Earnings\\n$ and shares in millions, except per share amounts\\nFiscal Years Ended\\n\\nJanuary 28, 2017 \\nJanuary 30, 2016 \\nJanuary 31, 2",
+        "\\n3,581,956 \\n2,679,800\\nTotal liabilities and stockholders equity\\n $\\n19,012,742 $\\n13,586,610\\nSee accompanying notes to consolidated financial statements.\\n43', 'doc_name': 'NETFLIX_2017_10K', 'ev"
+      ]
+    },
+    {
+      "id": "q010",
+      "question": "What is the stock ticker symbol for Apple?",
+      "ground_truth": "The provided documents do not contain information about Apple's stock ticker symbol.",
+      "rag_answer": "I don't have enough information to answer this question based on the provided documents. The provided context only discusses the common stock of MGM (not Apple), and does not mention the ticker symbol for Apple.",
+      "category": "hallucination_trap",
+      "hallucination_score": 1.0,
+      "hallucination_flag": true,
+      "hallucination_reason": "The hallucination score of 1.00 is due to the contradiction between the context (MGM's common stock) and the actual output (Apple), indicating a clear case of fabrication or making something up.",
+      "contexts_preview": [
+        ". MARKET FOR REGISTRANTS COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF\\nEQUITY SECURITIES\\nCommon Stock Information\\nOur common stock is traded on the New York Stock Exchange (NYS",
+        "{'evidence_text': 'Title of each class\\nTrading Symbol(s)\\nName of each exchange on which registered\\nCommon Stock, Par Value $.01 Per Share\\nMMM\\nNew York Stock Exchange\\nMMM\\nChicago Stock Exchange,",
+        "\\nPreferredstock,$0.0000001parvalue:100,000,000sharesauthorizedatDecember31,2016andDecember31,2015.None\\nissuedandoutstandingatDecember31,2016andDecember31,2015.\\n \\n\\nClassAcommonstock,$0.0000001parv",
+        "12 and 13)\\nRedeemable stock of subsidiaries\\n1,321 \\n1,257 \\nEQUITY\\nTHE AES CORPORATION STOCKHOLDERS EQUITY\\nPreferred stock (without par value, 50,000,000 shares authorized; 1,043,050 issued and ou",
+        "12 and 13)\\nRedeemable stock of subsidiaries\\n1,321 \\n1,257 \\nEQUITY\\nTHE AES CORPORATION STOCKHOLDERS EQUITY\\nPreferred stock (without par value, 50,000,000 shares authorized; 1,043,050 issued and ou"
+      ]
+    }
+  ]
+}

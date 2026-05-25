@@ -1,0 +1,12 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+chroma_db/
+.cache/
+*.bin
+*.safetensors
+.DS_Store
+.vscode/

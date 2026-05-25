@@ -1,0 +1,106 @@
+{
+  "run_id": "20260530_225827",
+  "timestamp": "2026-05-30T22:58:27.525854",
+  "metadata": {
+    "model": "ollama/llama3.2",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "chunk_count": 2122,
+    "golden_set": "evaluation/golden_set_financebench.json",
+    "ragas_enabled": false
+  },
+  "summary": {
+    "faithfulness": 0.0,
+    "answer_relevancy": 0.0,
+    "context_recall": 0.0,
+    "hallucination_rate": 0.0,
+    "total_questions": 5,
+    "flagged_questions": 0
+  },
+  "per_question": [
+    {
+      "id": "q001",
+      "question": "What was NVIDIA's Data Center revenue in fiscal year 2022?",
+      "ground_truth": "NVIDIA's Data Center revenue was $6,043 million in fiscal year 2022.",
+      "rag_answer": "I don't have enough information to answer this question based on the provided documents. The text only talks about AMD's financial performance and does not mention NVIDIA.",
+      "category": "segment_revenue",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "No hallucination detected",
+      "contexts_preview": [
+        ". Net\\nrevenue for 2022 was $23.6 billion, an increase of 44% compared to 2021 net revenue of $16.4 billion. The increase in net revenue was driven by a 64%\\nincrease in Data Center segment revenue pr",
+        ". Net\\nrevenue for 2022 was $23.6 billion, an increase of 44% compared to 2021 net revenue of $16.4 billion. The increase in net revenue was driven by a 64%\\nincrease in Data Center segment revenue pr",
+        ". The increase in net revenue was driven by a 64%\\nincrease in Data Center segment revenue primarily due to higher sales of our EPYC server processors, a 21% increase in Gaming segment revenue\\nprimar",
+        ". \\nFull Year 2022 Financial Highlights: \\n \\nConsolidated Results \\n \\n \\nConsolidated net revenues of $13.1 billion in the current year compared to $9.7 billion in the \\nprior year, an increase of 3",
+        "{'evidence_text': 'iscal 2024 was primarily driven by comparable sales declines in appliances, home theater, \\ncomputing and mobile phones, partially offset by comparable sales growth in gaming. Onlin"
+      ]
+    },
+    {
+      "id": "q002",
+      "question": "What is the capital of France?",
+      "ground_truth": "The provided documents do not contain information about the capital of France.",
+      "rag_answer": "I don't have enough information to answer this question based on the provided documents. The context only discusses revenues by geographic area for MGM China, and does not provide any information about France or its capital.",
+      "category": "hallucination_trap",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "Correctly refused to answer out-of-scope question",
+      "contexts_preview": [
+        ". Geographic Information\\nThe following summarizes revenues by geographic area:\\n \\nThree Months Ended\\nSix Months Ended\\n(MILLIONS)\\nJuly 2,\\n2023\\nJuly 3,\\n2022\\n%\\nChange\\nJuly 2,\\n2023\\nJuly 3,\\n2",
+        "{'evidence_text': 'The following summarizes revenues by geographic area:\\n \\nThree Months Ended\\nSix Months Ended\\n(MILLIONS)\\nJuly 2,\\n2023\\nJuly 3,\\n2022\\n%\\nChange\\nJuly 2,\\n2023\\nJuly 3,\\n2022\\n%\\",
+        "\\n\\n\\nDepreciationandamortization\\n\\n1,210,556\\n\\n1,304,649\\n\\n1,178,044\\n\\n\\n5,847,454\\n\\n9,078,978\\n\\n10,441,300\\nIncome",
+        "\\n\\n\\nDepreciationandamortization\\n\\n1,210,556\\n\\n1,304,649\\n\\n1,178,044\\n\\n\\n5,847,454\\n\\n9,078,978\\n\\n10,441,300\\nIncome",
+        ". \\n \\nMGM China \\n \\n \\nNet revenues of $674 million in the current year compared to $1.2 billion in the prior year, a \\ndecrease of 44%; and \\n \\nMGM China Adjusted Property EBITDAR loss of $203 mil"
+      ]
+    },
+    {
+      "id": "q003",
+      "question": "What were the key risks mentioned in the annual report related to supply chain?",
+      "ground_truth": "Supply chain risks include component shortages, reliance on third-party manufacturers, and geopolitical disruptions affecting production and delivery timelines.",
+      "rag_answer": "I don't have enough information to answer this question based on the provided documents.\n\nHowever, I can tell you that the context mentions \"supply chain disruptions\" and \"inflationary pressures\" as affecting the company. But it doesn't explicitly mention specific key risks related to supply chain in the annual report.\n\nIf you'd like, I can try to infer some potential risks, but keep in mind that this would be an educated guess rather than a definitive answer based on the provided context.",
+      "category": "risk_factors",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "No hallucination detected",
+      "contexts_preview": [
+        ". We and our suppliers are experiencing supply chain disruptions as a result of the lingering impacts of COVID-19, global supply\\nchain constraints, and labor instability. We and our suppliers are als",
+        ". Operational issues, including delays or defects in supplier components, failure\\nto meet internal performance plans, or delays or failures to achieve required regulatory approval, could result in ad",
+        ". See also Item 1. Business Regulatory Matters and Item 1A. Risk Factors.', 'doc_name': 'PEPSICO_2022_10K', 'evidence_page_num': 25, 'evidence_text_full_page': 'Table of Contents\\nItem 2",
+        ". They\\ninherently involve risks and uncertainties that could cause actual results to differ materially from those predicted in any such\\nforward-looking statement. These risks and uncertainties inclu",
+        ". They\\ninherently involve risks and uncertainties that could cause actual results to differ materially from those predicted in any such\\nforward-looking statement. These risks and uncertainties inclu"
+      ]
+    },
+    {
+      "id": "q004",
+      "question": "What was the revenue trend mentioned \u2014 higher in first half or second half of the year?",
+      "ground_truth": "Net revenue has historically been generally higher in the second half of the year than in the first half, though market conditions and product transitions could impact these trends.",
+      "rag_answer": "The revenue trend mentioned is generally higher in the second half of the year than in the first half of the year.",
+      "category": "business_trends",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "No hallucination detected",
+      "contexts_preview": [
+        "profit and operating income rates for the past nine \\nquarters and approximated 1.4% of Domestic revenue in fiscal 2023, an increase of approximately 50 basis points compared to fiscal 2020",
+        ". Historically, our net revenue has been generally higher in the second half of the year than in the first half of the\\nyear, although market conditions and product transitions could impact these tren",
+        ". These decreases in revenue were primarily due to the reasons \\ndescribed above and within the Consolidated Results section, above.\\n \\nDomestic segment stores open at the beginning and end of the se",
+        ". These decreases in revenue were primarily due to the reasons \\ndescribed above and within the Consolidated Results section, above.\\n \\nDomestic segment stores open at the beginning and end of the se",
+        ". \\nFull Year 2022 Financial Highlights: \\n \\nConsolidated Results \\n \\n \\nConsolidated net revenues of $13.1 billion in the current year compared to $9.7 billion in the \\nprior year, an increase of 3"
+      ]
+    },
+    {
+      "id": "q005",
+      "question": "Who is the current US President?",
+      "ground_truth": "The provided documents do not contain information about the current US President.",
+      "rag_answer": "I don't have enough information to answer this question based on the provided documents.",
+      "category": "hallucination_trap",
+      "hallucination_score": 0.0,
+      "hallucination_flag": false,
+      "hallucination_reason": "Correctly refused to answer out-of-scope question",
+      "contexts_preview": [
+        ". Prior to Ulta, she served as President and Chief\\nExecutive Officer and a member of the Board of Directors of United States Cellular Corporation from 2010 through 2013; and Global Chief Marketing\\nO",
+        ". Our history dates back\\nmore than 150 years, with origins in both Australia and the USA. Today, we are a global leader in developing and producing responsible\\npackaging for food, beverage, pharmace",
+        ". (January 24, 2023) Johnson & Johnson (NYSE: JNJ) today announced results for fourth-\\nquarter and full year 2022. Our full year 2022 results reflect the continued strength and stability of our three",
+        "{'evidence_text': 'On August 19, 2022, Foot Locker, Inc. (the Company), issued a press release announcing that, as part of a planned succession process, Richard\\nA. Johnson will step down as President",
+        ". Mary N. Dillon, 61, former Executive\\nChair and Chief Executive Officer of Ulta Beauty, Inc., has been appointed President and Chief Executive Officer and a member of the Companys Board\\nof Director"
+      ]
+    }
+  ]
+}

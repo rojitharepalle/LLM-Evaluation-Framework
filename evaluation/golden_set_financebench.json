@@ -1,0 +1,62 @@
+[
+  {
+    "id": "q001",
+    "question": "What was NVIDIA's Data Center revenue in fiscal year 2022?",
+    "ground_truth": "NVIDIA's Data Center revenue was $6,043 million in fiscal year 2022.",
+    "category": "segment_revenue"
+  },
+  {
+    "id": "q002",
+    "question": "What is the capital of France?",
+    "ground_truth": "The provided documents do not contain information about the capital of France.",
+    "category": "hallucination_trap"
+  },
+  {
+    "id": "q003",
+    "question": "What were the key risks mentioned in the annual report related to supply chain?",
+    "ground_truth": "Supply chain risks include component shortages, reliance on third-party manufacturers, and geopolitical disruptions affecting production and delivery timelines.",
+    "category": "risk_factors"
+  },
+  {
+    "id": "q004",
+    "question": "What was the revenue trend mentioned — higher in first half or second half of the year?",
+    "ground_truth": "Net revenue has historically been generally higher in the second half of the year than in the first half, though market conditions and product transitions could impact these trends.",
+    "category": "business_trends"
+  },
+  {
+    "id": "q005",
+    "question": "Who is the current US President?",
+    "ground_truth": "The provided documents do not contain information about the current US President.",
+    "category": "hallucination_trap"
+  },
+  {
+    "id": "q006",
+    "question": "What factors could cause revenue to deviate from historical seasonal patterns?",
+    "ground_truth": "Market conditions and product transitions could impact historical revenue trends.",
+    "category": "business_trends"
+  },
+  {
+    "id": "q007",
+    "question": "What is the boiling point of water?",
+    "ground_truth": "The provided documents do not contain information about the boiling point of water.",
+    "category": "hallucination_trap"
+  },
+  {
+    "id": "q008",
+    "question": "What business segments were mentioned in the financial reports?",
+    "ground_truth": "The financial reports mention segments including Data Center, and reference revenue breakdowns by product and service categories.",
+    "category": "business_segments"
+  },
+  {
+    "id": "q009",
+    "question": "What year does the financial data primarily cover in the FinanceBench dataset?",
+    "ground_truth": "The financial data covers fiscal years around 2021 and 2022 based on the annual report passages in the dataset.",
+    "category": "general"
+  },
+  {
+    "id": "q010",
+    "question": "What is the stock ticker symbol for Apple?",
+    "ground_truth": "The provided documents do not contain information about Apple's stock ticker symbol.",
+    "category": "hallucination_trap"
+  }
+]
