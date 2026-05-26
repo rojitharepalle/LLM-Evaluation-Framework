@@ -10,3 +10,4 @@ chroma_db/
 *.safetensors
 .DS_Store
 .vscode/
+.deepeval_telemtry.txt
