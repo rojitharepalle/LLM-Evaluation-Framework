@@ -204,4 +204,4 @@ class RAGPipeline:
         if self.vectorstore:
             self.vectorstore.delete_collection()
             self.vectorstore = None
-            console.print("[yellow]Collection deleted.[/yellow]")
+            console.print("[yellow]Collection deleted.[/yellow]")# Chunk size and overlap configurable via .env
