@@ -269,4 +269,4 @@ def generate_golden_set_from_pipeline(pipeline, questions: list[dict]) -> list[d
             "rag_answer": result["answer"],
             "contexts": result["contexts"],
         })
-    return results
+    return results# Extend this set with domain-specific questions for better coverage
