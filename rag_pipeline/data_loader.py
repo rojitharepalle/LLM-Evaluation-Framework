@@ -195,4 +195,4 @@ def load_sample_data() -> list[Document]:
     """Load built-in sample financial documents for quick testing."""
     docs = load_raw_texts(SAMPLE_FINANCIAL_TEXTS)
     console.print(f"[green]✓ Loaded {len(docs)} sample financial documents[/green]")
-    return docs
+    return docs# Supported sources: FinanceBench, Wikipedia, PDFs, raw text
