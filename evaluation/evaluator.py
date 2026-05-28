@@ -348,4 +348,4 @@ class HallucinationDetector:
         if not scored_results:
             return 0.0
         flagged = sum(1 for r in scored_results if r.get("hallucination_flag", False))
-        return round(flagged / len(scored_results), 4)
+        return round(flagged / len(scored_results), 4)# Hallucination threshold: 0.4 rule-based, 0.5 DeepEval
