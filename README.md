@@ -106,3 +106,16 @@ EMBEDDING_MODEL=all-MiniLM-L6-v2
 ## Resume Bullet
 
 > Built an automated LLM evaluation framework using RAGAS and DeepEval, scoring RAG pipelines on faithfulness, hallucination rate, and retrieval quality; integrated with GitHub Actions CI/CD to block deployments on quality regression.
+
+## Running the API
+
+```bash
+uvicorn rag_pipeline.api:app --reload
+```
+
+Query example:
+```bash
+curl -X POST http://localhost:8000/query \
+  -H "Content-Type: application/json" \
+  -d '{"question": "What was NVIDIA Data Center revenue in 2022?"}'
+```
