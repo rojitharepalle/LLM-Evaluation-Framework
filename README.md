@@ -119,3 +119,16 @@ curl -X POST http://localhost:8000/query \
   -H "Content-Type: application/json" \
   -d '{"question": "What was NVIDIA Data Center revenue in 2022?"}'
 ```
+
+## Running Evaluations
+
+```bash
+# Quick smoke test
+python scripts/run_eval.py --questions 5 --no-ragas
+
+# Full eval
+python scripts/run_eval.py --no-ragas
+
+# CI mode (exits 1 if hallucination rate > 10%)
+python scripts/run_eval.py --ci
+```
