@@ -147,4 +147,4 @@ def print_summary_table(ragas_scores: dict, hallucination_rate: float, per_quest
             border_style="red",
         ))
 
-    return ci_pass
+    return ci_pass# Results directory: evaluation/results/eval_run_TIMESTAMP.json
