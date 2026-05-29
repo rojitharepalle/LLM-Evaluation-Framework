@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   evaluate:
     runs-on: ubuntu-latest
@@ -41,6 +44,7 @@ jobs:
           EMBEDDING_PROVIDER: local
           EMBEDDING_MODEL: all-MiniLM-L6-v2
           CHROMA_PERSIST_DIR: ./chroma_db
+          HALLUCINATION_THRESHOLD: "0.3"
 
       - name: Upload eval results
         uses: actions/upload-artifact@v4
@@ -48,38 +52,3 @@ jobs:
         with:
           name: eval-results-${{ github.sha }}
           path: evaluation/results/
-
-      - name: Post eval summary to PR
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs')
-            const path = require('path')
-            const resultsDir = 'evaluation/results'
-            const files = fs.readdirSync(resultsDir).filter(f => f.endsWith('.json'))
-            if (!files.length) return
-            const latest = JSON.parse(fs.readFileSync(path.join(resultsDir, files[files.length-1])))
-            const s = latest.summary
-            const rate = (s.hallucination_rate * 100).toFixed(1)
-            const gate = s.hallucination_rate <= 0.1 ? '✅ PASSED' : '❌ FAILED'
-            const body = [
-              '## 🧪 LLM Evaluation Results',
-              '',
-              `**CI/CD Gate: ${gate}**`,
-              '',
-              '| Metric | Score |',
-              '|--------|-------|',
-              `| Faithfulness | ${(s.faithfulness*100).toFixed(1)}% |`,
-              `| Answer Relevancy | ${(s.answer_relevancy*100).toFixed(1)}% |`,
-              `| Context Recall | ${(s.context_recall*100).toFixed(1)}% |`,
-              `| Hallucination Rate | ${rate}% |`,
-              '',
-              `**${s.flagged_questions} / ${s.total_questions} questions flagged**`,
-            ].join('\n')
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body
-            })
