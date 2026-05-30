@@ -12,6 +12,8 @@ import argparse
 import sys
 from pathlib import Path
 
+from rag_pipeline import pipeline
+
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
@@ -25,6 +27,7 @@ console = Console()
 
 
 def main():
+    parser.add_argument("--skip-test", action="store_true", help="Skip test query (use in CI)")
     parser = argparse.ArgumentParser(description="Ingest documents into ChromaDB")
     parser.add_argument("--financebench", action="store_true", help="Load FinanceBench dataset")
     parser.add_argument("--pdf", type=str, help="Path to directory of PDF files")
@@ -66,9 +69,13 @@ def main():
     # Ingest
     chunk_count = pipeline.ingest_documents(docs)
 
-    # Verify with a test query
+# Verify with a test query (skip in CI where Ollama is not available)
+if not args.skip_test:
     console.print("\n[bold]Running test query...[/bold]")
     result = pipeline.query("What was the highest revenue company in 2022?")
+else:
+    console.print("[dim]Skipping test query (--skip-test)[/dim]")
+    result = {"answer": "skipped", "contexts": []}
 
     # Summary table
     table = Table(title="Ingestion Summary", show_header=False, box=None, padding=(0, 2))

@@ -32,7 +32,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Ingest sample data
-        run: python scripts/ingest.py
+        run: python scripts/ingest.py --skip-test
         env:
           EMBEDDING_PROVIDER: local
           EMBEDDING_MODEL: all-MiniLM-L6-v2
@@ -44,7 +44,6 @@ jobs:
           EMBEDDING_PROVIDER: local
           EMBEDDING_MODEL: all-MiniLM-L6-v2
           CHROMA_PERSIST_DIR: ./chroma_db
-          HALLUCINATION_THRESHOLD: "0.3"
 
       - name: Upload eval results
         uses: actions/upload-artifact@v4
