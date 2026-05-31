@@ -1,4 +1,4 @@
-# 🧪 Project A — LLM Evaluation Framework
+# LLM Evaluation Framework
 
 Automated RAG evaluation pipeline scoring faithfulness, hallucination rate, and retrieval quality — integrated with GitHub Actions CI/CD.
 
