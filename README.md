@@ -99,6 +99,6 @@ EMBEDDING_MODEL=all-MiniLM-L6-v2
 ## Phase Checklist
 
 - [x] **Phase 1 (Day 1–2)**: RAG pipeline + ChromaDB + FastAPI + golden set
-- [ ] **Phase 2 (Day 3–4)**: RAGAS + DeepEval evaluation suite
-- [ ] **Phase 3 (Day 5–6)**: React dashboard
-- [ ] **Phase 4 (Day 7)**: GitHub Actions CI/CD quality gate
+- [x] **Phase 2 (Day 3–4)**: RAGAS + DeepEval evaluation suite
+- [x] **Phase 3 (Day 5–6)**: React dashboard
+- [x] **Phase 4 (Day 7)**: GitHub Actions CI/CD quality gate
